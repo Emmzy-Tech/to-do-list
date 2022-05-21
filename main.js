@@ -30,8 +30,8 @@ for(let a = 0; a < myNodelist.length; a++){
   
 
 //  click to add 
-add.addEventListener('click', function(){
-    var inputMatch = inputCon.value;
+function letsAdd(){
+  var inputMatch = inputCon.value;
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");
     var txtNode = document.createTextNode(inputMatch);
@@ -49,7 +49,15 @@ add.addEventListener('click', function(){
       }
       inputCon.value = "";
       myClose();
+}
+
+document.addEventListener('keydown', function(e){
+  
+  if(e.key == "Enter"){
+    letsAdd();
+  }
 })
+add.addEventListener('click', letsAdd);
 
 
 
